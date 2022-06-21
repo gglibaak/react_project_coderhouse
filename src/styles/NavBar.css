@@ -1,0 +1,33 @@
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: #F7F7F7;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+}
+
+img {
+    width: 150px;
+    height: 130px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: black;
+    font-size: medium;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.logoCartFeo {
+    width: 60px;
+    height: 40px
+}
