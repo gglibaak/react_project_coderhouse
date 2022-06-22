@@ -4,8 +4,9 @@ header {
     justify-content: center;
     background-color: #F7F7F7;
     align-items: center;
-    justify-content: space-around;
-    height: 100px;
+    justify-content: space-evenly;
+    height: 80px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.008), 0 6px 6px rgba(0,0,0,0.13);
 }
 
 img {
@@ -13,21 +14,51 @@ img {
     height: 130px;
 }
 
-nav {
+.navBar__list {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-a {
+.navBar__list--item {
     margin-left: 15px;
     text-decoration: none;
     color: black;
     font-size: medium;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 600;    
 }
 
-.logoCartFeo {
-    width: 60px;
-    height: 40px
+.navBar__list--item:hover {
+    color: #FF2C32;
+    transition: all 0.2s ease;
+}
+
+.navBar__list--icon:hover {
+    cursor: pointer;
+    color: #FF2C32;
+    transition: all 0.2s ease;
+}
+
+.btn-selected {
+    cursor: pointer;
+    transition: all .2s ease;
+    padding: 8px 18px;
+    border-radius: 100px;
+    background: #FF2C32;
+    border: 1px solid transparent;
+    font-size: 15px;
+    color: #F7F7F7;
+}
+
+.btn-selected:hover {
+    transition: all .2s ease;
+    background: #F7F7F7;
+    border: 1px solid #FF2C32;
+    color: #FF2C32;
+}
+
+.navBar__list--span {
+    color: aqua;
+    z-index: 1;
 }

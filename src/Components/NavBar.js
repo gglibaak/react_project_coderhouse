@@ -1,22 +1,24 @@
-import logo from '../logo.svg';
+import logo from '../logo.png';
 import '../styles/NavBar.css'
-// import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'; //NO FUNCIONA
+// import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'; 
+import { Button} from '@mui/material';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
+import CartWidget from './CartWidget'
+
+
 
 const NavBar = () => {
     return (
         <header>
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1>CoderInstruments Online</h1>
-            
-            <nav>
-                <a href="#">Incio</a>
-                <a href="#">Instrumentos</a>
-                <a href="#">Ultimos Ingresos</a>
-                <a href="#">Contacto</a> 
-            </nav>
-            
-            <img className='logoCartFeo' src="https://www.seekpng.com/png/detail/932-9327293_shopping-cart.png" alt="" />  
-
+            <a href="#"><img src={logo} className="App-logo" alt="logo" />  </a>                                 
+            <nav className='navBar__list'>
+                <a className='navBar__list--item btn-selected' href="#">Inicio</a>
+                <a className='navBar__list--item' href="#">Instrumentos</a>
+                <a className='navBar__list--item' href="#">Ultimos Ingresos</a>
+                <a className='navBar__list--item' href="#">Contacto</a> 
+            </nav>            
+            <CartWidget />
+            <Button variant="contained" style={{backgroundColor: "#FF2C32"}} startIcon={<LockOpenIcon />}>Iniciar Sesión</Button>
         </header>
     )
 }
