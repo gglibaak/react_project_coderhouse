@@ -5,7 +5,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import { useState } from 'react';
 
 
-const ItemCount = ( {stock, initial} ) => {
+const ItemCount = ( {stock, initial, onAdd} ) => {
     const [itemCount, setItemCount] = useState(1);
     return (
         <>
@@ -14,23 +14,24 @@ const ItemCount = ( {stock, initial} ) => {
             <div>
                 <h2>{itemCount}</h2>
                 <ButtonGroup>
-                    <Button
-                        onClick={() => {
+                    <Button color='error' onClick={() => {
+                        
                         setItemCount(Math.max( itemCount - 1, 0 ));
                         }}
                     >
                         {" "}
-                        <RemoveIcon fontSize="small" />
+                        <RemoveIcon color='error' fontSize="small" />
                     </Button>
-                    <Button
-                        onClick={() => {
+                    <Button color='error' onClick={() => {
 
-                        itemCount >= stock ? alert("Stock Nulo") : setItemCount(itemCount + 1);
+                        itemCount >= stock ? alert("Stock Nulo") : //setItemCount(itemCount + 1);
+                        setItemCount(itemCount + 1);
+                        onAdd(itemCount + 1)        
 
                         }}
                     >
                         {" "}
-                        <AddIcon fontSize="small" />
+                        <AddIcon fontSize="small" color='error' />
                     </Button>
                 </ButtonGroup>
             </div>
