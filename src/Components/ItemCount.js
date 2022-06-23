@@ -16,7 +16,8 @@ const ItemCount = ( {stock, initial, onAdd} ) => {
                 <ButtonGroup>
                     <Button color='error' onClick={() => {
                         
-                        setItemCount(Math.max( itemCount - 1, 0 ));
+                       itemCount > initial ? setItemCount(Math.max( itemCount - 1, 0 )) : console.warn(`Imposible disminuir menos que ${initial}`);
+
                         }}
                     >
                         {" "}
@@ -24,9 +25,7 @@ const ItemCount = ( {stock, initial, onAdd} ) => {
                     </Button>
                     <Button color='error' onClick={() => {
 
-                        itemCount >= stock ? alert("Stock Nulo") : //setItemCount(itemCount + 1);
-                        setItemCount(itemCount + 1);
-                        onAdd(itemCount + 1)        
+                        itemCount >= stock ? alert("Stock Nulo") : setItemCount(itemCount + 1);                       
 
                         }}
                     >
