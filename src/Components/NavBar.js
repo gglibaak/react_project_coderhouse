@@ -1,4 +1,4 @@
-import logo from '../logo.png';
+import logo from '../logo.svg';
 import '../styles/NavBar.css'
 import { Button } from '@mui/material';
 import LockOpenIcon from '@mui/icons-material/LockOpen';

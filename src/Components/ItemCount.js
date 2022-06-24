@@ -5,8 +5,8 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import { useState } from 'react';
 
 
-const ItemCount = ( {stock, initial, onAdd} ) => {
-    const [itemCount, setItemCount] = useState(1);
+const ItemCount = ( {stock, initial = 1, onAdd} ) => {
+    const [itemCount, setItemCount] = useState(initial);
     return (
         <>
         <h3>Stock disponible: { stock - itemCount } </h3>
