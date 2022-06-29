@@ -62,3 +62,30 @@ img {
     color: aqua;
     z-index: 1;
 }
+
+@media only screen and (max-width: 480px) {
+    img {
+        width: 150px;
+        height: 180px;
+    }
+    header {
+       /* flex-direction: column;
+        height: 380px;*/
+        position: fixed;
+        top:0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+    } 
+
+    .navBar__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;       
+    }  
+    .navBar__list--item {
+        margin-top: 10px;
+    }
+
+}

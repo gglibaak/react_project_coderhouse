@@ -5,8 +5,9 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import { useState } from 'react';
 
 
-const ItemCount = ( {stock, initial = 1, onAdd} ) => {
-    const [itemCount, setItemCount] = useState(initial);
+
+const ItemCount = ( {stock, initial, onAdd} ) => {
+    const [itemCount, setItemCount] = useState(1);
     return (
         <>
         <h3>Stock disponible: { stock - itemCount } </h3>
@@ -16,9 +17,8 @@ const ItemCount = ( {stock, initial = 1, onAdd} ) => {
                 <ButtonGroup>
                     <Button color='error' onClick={() => {
                         
-                       itemCount > initial ? setItemCount(Math.max( itemCount - 1, 0 )) : console.warn(`Imposible disminuir menos que ${initial}`);
-
-                        }}
+                       itemCount > initial ? setItemCount(Math.max( itemCount - 1, 0 )) : console.warn(`Imposible disminuir menos que ${initial}`)
+                    }}
                     >
                         {" "}
                         <RemoveIcon color='error' fontSize="small" />

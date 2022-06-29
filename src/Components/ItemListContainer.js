@@ -65,7 +65,7 @@ const ItemListContainer = (props) => {
       promise.then((res) => {
         
         setInstrumentList(res);
-      }).catch(() => console.error("Algo a sucedido")
+      }).catch(() => console.error("Algo ha sucedido...")
       ).finally(() => {
         setLoading(false);
       })
@@ -75,7 +75,7 @@ const ItemListContainer = (props) => {
             <div>
                 <h3>{props.greeting}</h3>
             </div>
-            {loading ? <Spinner color="#FF2C32" size={8}  cargando/> : null}
+            {loading ? <Spinner color="#FF2C32" size={8}/> : null}
             <ItemList instruments={instrumentList} />
             <ItemCount stock={8} initial={1}  />
     </>)
