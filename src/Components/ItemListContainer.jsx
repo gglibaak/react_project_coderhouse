@@ -58,12 +58,11 @@ const promise = new Promise((resolve, reject) => {
 const ItemListContainer = (props) => {
 
     const [instrumentList, setInstrumentList] = useState([])
-    const [loading, setLoading] = useState([])
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-      setLoading(true);
-      promise.then((res) => {
-        
+        setLoading(true);
+        promise.then((res) => {        
         setInstrumentList(res);
       }).catch(() => console.error("Algo ha sucedido...")
       ).finally(() => {
@@ -75,7 +74,7 @@ const ItemListContainer = (props) => {
             <div>
                 <h3>{props.greeting}</h3>
             </div>
-            {loading ? <Spinner color="#FF2C32" size={8}/> : null}
+            { loading && <Spinner color="#FF2C32" size={8}/> }
             <ItemList instruments={instrumentList} />
             <ItemCount stock={8} initial={1}  />
     </>)

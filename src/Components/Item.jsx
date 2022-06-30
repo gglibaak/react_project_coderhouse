@@ -14,18 +14,18 @@ const Item = ( { instrumentItems }) => {
                 sx={{mx: 10}}>
          {instrumentItems.map((instrumentItem) =>{
              return (
-                 <>
-                <Card sx={{ mb: 1}}
-                      key={instrumentItem.id}>
+                 <div key={instrumentItem.id}>
+                <Card sx={{ mb: 1}}>
                 <CardMedia
                     component="img"
                     alt={instrumentItem.title}
                     height="140"
-                    image={instrumentItem.pictureUrl}
+                    image={instrumentItem.pictureUrl}                    
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                     {instrumentItem.title}
+                    
                     </Typography>
                     <Typography variant="body2" color="text.secondary" sx={ {mb: 5}}>
                     {instrumentItem.description}
@@ -36,7 +36,7 @@ const Item = ( { instrumentItems }) => {
                 </CardContent>
                 <Button variant="contained" sx={{ mb: 5 }}style={{backgroundColor: "#FF2C32"}}>Ver Más</Button>
                 </Card>
-                 </>
+                 </div>
              )
          })}
          </Stack>

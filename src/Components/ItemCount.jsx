@@ -3,36 +3,37 @@ import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useState } from 'react';
-
+import { Box } from '@mui/system';
 
 
 const ItemCount = ( {stock, initial, onAdd} ) => {
     const [itemCount, setItemCount] = useState(1);
     return (
-        <>
-        <h3>Stock disponible: { stock - itemCount } </h3>
-        
-            <div>
-                <h2>{itemCount}</h2>
+        <>                
+            <div>                
                 <ButtonGroup>
-                    <Button color='error' onClick={() => {
+                    <Button variant='text' onClick={() => {
                         
                        itemCount > initial ? setItemCount(Math.max( itemCount - 1, 0 )) : console.warn(`Imposible disminuir menos que ${initial}`)
                     }}
                     >
-                        {" "}
-                        <RemoveIcon color='error' fontSize="small" />
+                        {""}
+                        <RemoveIcon style={{color: "#FF2C32", fontSize: "15px"}} />
                     </Button>
-                    <Button color='error' onClick={() => {
+                    <Box style={{margin: "0 30px" }}>
+                    <h3>{itemCount}</h3>
+                    </Box>
+                    <Button style={{}} variant='text'  onClick={() => {
 
                         itemCount >= stock ? alert("Stock Nulo") : setItemCount(itemCount + 1);                       
 
                         }}
                     >
-                        {" "}
-                        <AddIcon fontSize="small" color='error' />
+                        {""}
+                        <AddIcon  fontSize="small" style={{color: "#FF2C32", fontSize: "15px"}} />
                     </Button>
                 </ButtonGroup>
+                <p>Stock disponible: { stock - itemCount } </p>
             </div>
         </>
     )
