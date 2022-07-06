@@ -1,5 +1,10 @@
 
 header {
+    z-index: 2;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%; 
     display: flex;
     justify-content: center;
     background-color: #F7F7F7;

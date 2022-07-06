@@ -2,7 +2,7 @@
 .item__detail--container {
     height: 750px;
     width: 1200px;
-    margin: 0 auto;
+    margin: 50px auto;
     padding: 0 20px;
     display: flex;
     justify-content: center;
@@ -32,6 +32,7 @@
 .item__detail--pTitle {
     font-size: 45px;
     font-weight: 700;
+    margin-bottom: 0;
 }
 
 .item__detail--pPrice {
@@ -39,4 +40,30 @@
     font-weight: 800;
 }
 
+@media only screen and (max-width: 768px) {
 
+    
+    .item__detail--container {
+        
+        flex-direction: column;
+        width: 300px;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .item__detail--img img {
+
+        
+        width: 150px;
+        height: 150px;
+        margin-left: 100%;
+    }
+
+    .item__detail--pTitle {
+        font-size: 25px;
+        margin-bottom: 0;
+        
+    }
+    
+    
+}

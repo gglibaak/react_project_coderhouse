@@ -38,8 +38,9 @@ const ItemDetail = ( {item} ) => {
                   <Button style={{color: '#FF2C32', margin:'0 50px', fontSize:'12px'}} startIcon={<FavoriteIcon />}>Añadir a Deseados.</Button>
                 </Box>                
                 <ItemCount stock={15} initial={1}  />
-                <Button sx={{ width: "66%", margin: "0 auto"}} variant="contained" style={{backgroundColor: "#FF2C32"}} startIcon={<AddShoppingCartIcon />}>Añadir al Carro</Button>   
-            </div>            
+                <Button sx={{width: { sm: '90%' , md: '66%' }, margin: "0 auto",}} variant="contained" style={{backgroundColor: "#FF2C32"}} startIcon={<AddShoppingCartIcon />}>Añadir al Carro</Button>   
+            </div>      
+                  
         
         </div>
     )
