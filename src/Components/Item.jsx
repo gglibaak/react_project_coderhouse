@@ -6,6 +6,7 @@ import { Button } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 import Avatar from '@mui/material/Avatar';
+import{ Link } from 'react-router-dom'
 
 const Item = ( { instrumentItems } ) => {
 
@@ -47,7 +48,9 @@ const Item = ( { instrumentItems } ) => {
                     ${instrumentItem.price}
                     </Typography>
                 </CardContent>
-                <Button variant="contained" sx={{ mb: 5 }}style={{backgroundColor: "#FF2C32"}}>Ver Más</Button>
+                <Link to={`/item/${instrumentItem.id}`} style={{textDecoration: 'none'}}>
+                    <Button variant="contained" sx={{ mb: 5 }}style={{backgroundColor: "#FF2C32"}}>Ver Más</Button>
+                </Link>
                 </Card>
                  </div>
              )

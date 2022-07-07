@@ -7,7 +7,7 @@ const CartWidget = () => {
         <>
 
         <Badge color="error" badgeContent= {5}>                
-             <ShoppingCartIcon className='navBar__list--icon'> <span className='navBar__list--span'> 2</span> </ShoppingCartIcon>{" "}
+             <ShoppingCartIcon className='navBar__list--icon'> <span className='navBar__list--span'>2</span> </ShoppingCartIcon>{" "}
         </Badge>
 
         </>        

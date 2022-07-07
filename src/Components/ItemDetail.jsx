@@ -17,7 +17,7 @@ const ItemDetail = ( {item} ) => {
     return(
         <div className="item__detail--container">
             <div className='item__detail--img'>
-                <img src={item.pictureUrl} alt={item.title} />
+                <img src={item.pictureUrl2} alt={item.title} />
             </div>
             <div className='item__detail--info'>
                 <p className='item__detail--pTitle'>{item.title}</p>
@@ -37,7 +37,7 @@ const ItemDetail = ( {item} ) => {
                   <Button style={{color: '#00962d', margin:'0 50px', fontSize:'12px'}} startIcon={<LocalShippingIcon />} disabled>Envio sin cargo</Button>
                   <Button style={{color: '#FF2C32', margin:'0 50px', fontSize:'12px'}} startIcon={<FavoriteIcon />}>Añadir a Deseados.</Button>
                 </Box>                
-                <ItemCount stock={15} initial={1}  />
+                <ItemCount stock={item.stock} initial={1}  />
                 <Button sx={{width: { sm: '90%' , md: '66%' }, margin: "0 auto",}} variant="contained" style={{backgroundColor: "#FF2C32"}} startIcon={<AddShoppingCartIcon />}>Añadir al Carro</Button>   
             </div>      
                   

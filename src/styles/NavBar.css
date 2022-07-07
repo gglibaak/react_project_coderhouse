@@ -25,18 +25,22 @@ img {
     align-items: center;
 }
 
-.navBar__list--item {
-    margin-left: 15px;
+.navBar__list--item {    
     text-decoration: none;
     color: black;
     font-size: medium;
     text-transform: uppercase;
     font-weight: 600;    
+    padding: 0 18px;
 }
 
 .navBar__list--item:hover {
     color: #FF2C32;
     transition: all 0.2s ease;
+}
+
+.navBar__list--icon {
+    color: black;
 }
 
 .navBar__list--icon:hover {
@@ -45,22 +49,19 @@ img {
     transition: all 0.2s ease;
 }
 
-.btn-selected {
+.active {
     cursor: pointer;
     transition: all .2s ease;
     padding: 8px 18px;
     border-radius: 100px;
     background: #FF2C32;
-    border: 1px solid transparent;
-    font-size: 15px;
+    border: 1px solid transparent;    
     color: #F7F7F7;
 }
 
-.btn-selected:hover {
-    transition: all .2s ease;
-    background: #F7F7F7;
-    border: 1px solid #FF2C32;
-    color: #FF2C32;
+.active:hover {
+    transition: all .1s linear;    
+    color: #F7F7F7;
 }
 
 .navBar__list--span {
