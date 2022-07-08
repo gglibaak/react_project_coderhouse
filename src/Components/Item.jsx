@@ -28,7 +28,7 @@ const Item = ( { instrumentItems } ) => {
          {instrumentItems.map((instrumentItem) =>{
              return (
                  <div key={instrumentItem.id}  >
-                <Card style={{boxShadow: "2px 2px 2px 2px rgba(0, 0, 0, 0.1)"}} sx={{ mb: {xs:4, sm:4, md:4}, margin: {xs:'0 auto'},width: {xs: 280, sm: 280, md: 250}, height: {xs: 500, sm: 500, md: 450} }}>
+                <Card style={{boxShadow: "2px 2px 2px 2px rgba(0, 0, 0, 0.1)"}} sx={{ mb: {xs:4, sm:4, md:4}, margin: {xs:'0 auto'},width: {xs: 280, sm: 280, md: 250}, height: {xs: 500, sm: 500, md: 420} }}>
                 <CardMedia
                     component="img"
                     alt={instrumentItem.title}
@@ -40,7 +40,7 @@ const Item = ( { instrumentItems } ) => {
                     
                     </Typography>
                     <Typography variant="body2" color="text.secondary" sx={ {mb: 5}}>
-                    {instrumentItem.description}
+                    {instrumentItem.shortDescription}
                     </Typography>
                     <Avatar style={{ margin: '15px auto', boxShadow: "2px 2px 2px 2px rgba(0, 0, 0, 0.1)" }} alt={instrumentItem.brand} src={instrumentItem.brand === 'Gibson USA' ? brandGibson : brandFender} />
                     <Divider variant="middle" sx={{mb:2}}/>
@@ -49,7 +49,7 @@ const Item = ( { instrumentItems } ) => {
                     </Typography>
                 </CardContent>
                 <Link to={`/item/${instrumentItem.id}`} style={{textDecoration: 'none'}}>
-                    <Button variant="contained" sx={{ mb: 5 }}style={{backgroundColor: "#FF2C32"}}>Ver Más</Button>
+                    <Button variant="contained" sx={{ mb: 5 }}style={{backgroundColor: "#FF2C32",  }}>Ver Más</Button>
                 </Link>
                 </Card>
                  </div>
