@@ -165,8 +165,7 @@ const ItemListContainer = (props) => {
                 <h3>{props.greeting}</h3>
             </div>
             { loading && <Spinner color="#FF2C32" size={8}/> }
-            <ItemList instruments={instrumentList} />
-            {/* <ItemCount stock={8} initial={1}  /> */}
+            <ItemList instruments={instrumentList} />           
     </>)
 }
 
