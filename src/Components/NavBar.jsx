@@ -20,10 +20,10 @@ const NavBar = () => {
        
         <header>
             <Link to="/"><img src={logo} className="App-logo" alt="logo" /></Link>  
-            <Box sx={{ display: { xs: 'none', md: 'block', sm: 'none' } }}>                               
-                <nav className='navBar__list'>                   
+            <Box component="nav" sx={{ display: { xs: 'none', md: 'block', sm: 'none' } }}>                               
+                <div className='navBar__list'>                   
                     { categories.map((category) => <NavLink key={ category.id } className='navBar__list--item' to={ category.route }>{ category.name }</NavLink> ) }
-                </nav> 
+                </div> 
             </Box>
             <Link to="/cart">
                 <CartWidget />
