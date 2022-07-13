@@ -6,17 +6,21 @@ import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Box } from '@mui/system';
 import Rating from '@mui/material/Rating';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
+import { context } from '../Context/CartContext';
 
 const ItemDetail = ( {item} ) => {
     const [value, setValue] = useState(3); 
-    const [confirmBtn, setConfirmBtn] = useState(false)
+    const [confirmBtn, setConfirmBtn] = useState(false);
+    const { addItem } = useContext(context);
+    
     
     const onAdd = (itemCount) => {
         setConfirmBtn(true)
-        console.log(`Seleccion: ${itemCount}`)
+        // console.log(`Seleccion: ${itemCount}`)
+        addItem(item.title, itemCount);
     }
 
     return (
