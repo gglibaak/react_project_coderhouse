@@ -1,13 +1,16 @@
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'; 
 import Badge from '@mui/material/Badge';
+import { useContext } from 'react';
+import { context } from '../Context/CartContext';
 
 
 const CartWidget = () => {
-    return (
-        <>
+const { itemCartCount } = useContext(context)
 
-        <Badge color="error" badgeContent= {5}>                
-             <ShoppingCartIcon className='navBar__list--icon'> <span className='navBar__list--span'>2</span> </ShoppingCartIcon>{" "}
+    return (
+        <>        
+        <Badge color="error" badgeContent= {itemCartCount}>                
+             <ShoppingCartIcon className='navBar__list--icon'> <span className='navBar__list--span'></span> </ShoppingCartIcon>{" "}
         </Badge>
 
         </>        

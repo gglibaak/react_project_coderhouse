@@ -11,8 +11,8 @@ import CartContextProvider from '../src/Context/CartContext'
 function App() {
   return (
     <div className="App">
-      <CartContextProvider>
       <BrowserRouter>
+      <CartContextProvider>
         <Navbar />         
         <Routes>
          <Route path='/' element={<ItemListContainer greeting="Lista de Productos" />} />    
@@ -21,8 +21,8 @@ function App() {
          <Route path='/cart' element={<Cart />} />    
         </Routes>
         <Footer />
-      </BrowserRouter>
       </CartContextProvider>
+      </BrowserRouter>
     </div>
   );
 }

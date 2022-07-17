@@ -12,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const ItemCount = ( {stock, initial, onAdd} ) => {
     const [itemCount, setItemCount] = useState(1);
 
-    const addItem = () => {
+    const addItemToCart = () => {
         notify(2)
         setTimeout(() => {
             onAdd(itemCount)
@@ -91,7 +91,7 @@ const ItemCount = ( {stock, initial, onAdd} ) => {
                 </ButtonGroup>
                 <p>Stock disponible: { stock - itemCount }</p>
                 <ToastContainer />
-                <Button onClick={addItem} sx={{width: { sm: '90%' , md: '66%' }, margin: "0 auto",}} variant="contained" style={{backgroundColor: "#FF2C32"}} startIcon={<AddShoppingCartIcon />}>Añadir al Carro</Button>   
+                <Button onClick={addItemToCart} sx={{width: { sm: '90%' , md: '66%' }, margin: "0 auto",}} variant="contained" style={{backgroundColor: "#FF2C32"}} startIcon={<AddShoppingCartIcon />}>Añadir al Carro</Button>   
             </div>
         </>
     )

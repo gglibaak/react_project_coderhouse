@@ -20,7 +20,7 @@ const ItemDetail = ( {item} ) => {
     const onAdd = (itemCount) => {
         setConfirmBtn(true)
         // console.log(`Seleccion: ${itemCount}`)
-        addItem(item.title, itemCount);
+        addItem(item, itemCount);
     }
 
     return (
