@@ -1,11 +1,11 @@
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'; 
 import Badge from '@mui/material/Badge';
 import { useContext } from 'react';
-import { context } from '../Context/CartContext';
+import { cartContext } from '../Context/CartContext';
 
 
 const CartWidget = () => {
-const { itemCartCount } = useContext(context)
+const { itemCartCount } = useContext(cartContext)
 
     return (
         <>        

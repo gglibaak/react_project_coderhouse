@@ -9,12 +9,12 @@ import Rating from '@mui/material/Rating';
 import { useState, useContext } from 'react';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
-import { context } from '../Context/CartContext';
+import { cartContext } from '../Context/CartContext';
 
 const ItemDetail = ( {item} ) => {
     const [value, setValue] = useState(3); 
     const [confirmBtn, setConfirmBtn] = useState(false);
-    const { addItem } = useContext(context);
+    const { addItem } = useContext(cartContext);
     
     
     const onAdd = (itemCount) => {

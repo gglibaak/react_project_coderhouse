@@ -1,8 +1,8 @@
 import { createContext, useState, useEffect } from "react"
 
-export const context = createContext();
+export const cartContext = createContext();
 
-const { Provider } = context;
+const { Provider } = cartContext;
 
 
 const CartContextProvider = ({ children }) => {
@@ -52,7 +52,7 @@ const clearList = () => {
 }
 
     return (
-        <Provider value={ {itemCartList, addItem, removeItem, clearList, itemCartCount}}>
+        <Provider value={ {itemCartList, addItem, removeItem, clearList, itemCartCount} }>
         { children}
         </Provider>
     )
