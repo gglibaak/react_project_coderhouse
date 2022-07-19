@@ -42,8 +42,8 @@ const totalCartCount = () => {
 }
 
 const removeItem = (itemId) => {
-    setItemCartList(itemCartList.filter(product => product.id !== itemId))
-    console.log("Flag: Removiendo...")
+    setItemCartList(itemCartList.filter(product => product.item.id !== itemId))
+    console.log("Flag: Removiendo... "+"ID:"+ itemId)
 }
 
 const clearList = () => {
