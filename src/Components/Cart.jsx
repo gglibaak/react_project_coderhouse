@@ -11,7 +11,7 @@ import { useContext } from 'react';
 
 const Cart = () => {
 
-  const { itemCartList, removeItem } = useContext(cartContext);
+  const { itemCartList, removeItem, modifyItem } = useContext(cartContext);
   
  
   return (
@@ -65,9 +65,7 @@ const Cart = () => {
           </Typography>
         </Box>
       <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: 150, height: 200, }}>
-      <Button style={{}} variant='text'  onClick={() => {
-        removeItem(itemCart.item.id);
-      }}
+      <Button style={{}} variant='text'  onClick={() => { removeItem(itemCart.item.id) }}
     >
     <DeleteIcon style={{color: "#FF2C32"}} />    
     </Button>           

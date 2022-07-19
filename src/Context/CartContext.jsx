@@ -41,9 +41,20 @@ const totalCartCount = () => {
     setItemCartCount(itemCartCount)
 }
 
+const modifyItem = (type, itemId) => {
+    switch (type) {
+        case 1: //Addition
+            break;
+        case 2://Subtraction
+            break;
+        default:
+            break;
+    }
+}
+
 const removeItem = (itemId) => {
     setItemCartList(itemCartList.filter(product => product.item.id !== itemId))
-    console.log("Flag: Removiendo... "+"ID:"+ itemId)
+    console.log("Flag: Removiendo... "+ itemId)
 }
 
 const clearList = () => {
