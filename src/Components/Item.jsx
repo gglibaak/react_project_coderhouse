@@ -39,7 +39,7 @@ const Item = ( { instrumentItems } ) => {
                     {instrumentItem.title}
                     
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" sx={ {mb: 5}}>
+                    <Typography variant="body2" color="text.secondary" sx={ {mb: 5} }>
                     {instrumentItem.shortDescription}
                     </Typography>
                     <Avatar style={{ margin: '15px auto', boxShadow: "2px 2px 2px 2px rgba(0, 0, 0, 0.1)" }} alt={instrumentItem.brand} src={instrumentItem.brand === 'Gibson USA' ? brandGibson : brandFender} />

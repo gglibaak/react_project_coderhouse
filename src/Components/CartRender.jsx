@@ -38,9 +38,7 @@ const CartRender = () => {
       </Box>
       <Box sx={{ display: 'flex', flexDirection: 'column', width: 300, height: 200, justifyContent: 'center'}}>
         <ButtonGroup sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}} >
-            <Button variant='text' onClick={() => {                
-                             
-            }}
+            <Button variant='text' onClick={ () => modifyItem(2, itemCart.item.id) }
             >
                 {""}
                 <RemoveIcon style={{color: "#FF2C32", fontSize: "15px"}} />
@@ -48,9 +46,7 @@ const CartRender = () => {
             <Box style={{margin: "0 30px" }}>
            { itemCart.quantity }
             </Box>
-            <Button style={{}} variant='text'  onClick={() => {                                 
-
-                }}
+            <Button style={{}} variant='text'  onClick={ () => modifyItem(1, itemCart.item.id) }
             >
                 {""}
                 <AddIcon  fontSize="small" style={{color: "#FF2C32", fontSize: "15px"}} />

@@ -42,14 +42,26 @@ const totalCartCount = () => {
 }
 
 const modifyItem = (type, itemId) => {
-    switch (type) {
-        case 1: //Addition
-            break;
-        case 2://Subtraction
-            break;
-        default:
-            break;
-    }
+  const itemMdfy = itemCartList.findIndex((i) => i.item.id === itemId);
+
+  switch (type) {
+    case 1: //Addition
+      const newList = [...itemCartList];
+      newList[itemMdfy].quantity += 1;
+      setItemCartList(newList);
+      console.log("Flag: Es igual y SUMA");
+      break;
+    case 2: //Subtraction
+      if (itemCartList[itemMdfy].quantity > 1) {
+        const newList = [...itemCartList];
+        newList[itemMdfy].quantity--;
+        setItemCartList(newList);
+        console.log("Flag: Es igual y RESTA");
+      } else console.log("FLAG: Es igual, NO PUEDE SER MENOR QUE 1");
+      break;
+    default:
+      break;
+  }
 }
 
 const removeItem = (itemId) => {
@@ -63,7 +75,7 @@ const clearList = () => {
 }
 
     return (
-        <Provider value={ {itemCartList, addItem, removeItem, clearList, itemCartCount} }>
+        <Provider value={ {itemCartList, addItem, removeItem, clearList, itemCartCount , modifyItem} }>
         { children}
         </Provider>
     )
