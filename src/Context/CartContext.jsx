@@ -11,7 +11,7 @@ let [itemCartCount,setItemCartCount] = useState(0)
 let [checkoutFinish, setCheckoutFinish] = useState(false)
 
 useEffect(() => {
-    console.log(itemCartList) 
+    // console.log(itemCartList) 
     totalCartCount();
     checkOut();
     // eslint-disable-next-line
