@@ -9,36 +9,38 @@ import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 const UserForm = () => {
   const { itemCartList } = useContext (cartContext)
   const [OrderId, setOrderId] = useState(0)
-  const [value, setValue] = useState({
+  const [buyer, setBuyer] = useState({
       name: '',
       phone: '',
       email: ''
   });
+
+  const newList = itemCartList.map(doc => {
+    return {
+      id: doc.item.id,
+      title: doc.item.title,
+      price: doc.item.price,      
+    }
+  })  
   
   const sendOrder = () => {
     const orderCollection = collection(db, 'orders');
     addDoc(orderCollection, {
-      value, 
-      items: itemCartList,
+      buyer, 
+      items: newList,
       date: serverTimestamp(),
       total: 400,
     })
     .then((result) => {
       setOrderId(result.id)
+      console.log(newList)
     })
   }
 
   
-
-  console.log(value);
-  console.log(OrderId);
-  // const handleSubmit = () => {
-    
-   
-  // }
   
   const handleChange = (prop) => (event) => {
-      setValue({ ...value, [prop]: event.target.value });
+       setBuyer({ ...buyer, [prop]: event.target.value });
     };
 
   return (
@@ -63,7 +65,7 @@ const UserForm = () => {
           label="Nombre"
           
           name='name'
-          value={value.name}
+          value={buyer.name}
           onChange={handleChange('name')}
           variant="standard"
         //   required='true'
@@ -75,7 +77,7 @@ const UserForm = () => {
           label="Teléfono"
           
           maxRows={1}
-          value={value.phone}
+          value={buyer.phone}
           onChange={handleChange('phone')}
           variant="standard"
           helperText="..."
@@ -88,7 +90,7 @@ const UserForm = () => {
           label="Correo Electronico"
 
           maxRows={1}
-          value={value.email}
+          value={buyer.email}
           onChange={handleChange('email')}
           variant="standard"
         //   required='true'     
