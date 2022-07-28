@@ -8,12 +8,19 @@ const { Provider } = cartContext;
 const CartContextProvider = ({ children }) => {
 let [itemCartList, setItemCartList] = useState([])
 let [itemCartCount,setItemCartCount] = useState(0)
+let [checkoutFinish, setCheckoutFinish] = useState(false)
 
 useEffect(() => {
     console.log(itemCartList) 
     totalCartCount();
+    checkOut();
     // eslint-disable-next-line
   }, [itemCartList])
+
+
+const checkOut = () => checkoutFinish === false ? setCheckoutFinish(true) : setCheckoutFinish(false);
+
+//console.log(checkoutFinish) /*FLAG BORRAR*/
 
 const addItem = (item, quantity) => {
 
@@ -75,7 +82,7 @@ const clearList = () => {
 }
 
     return (
-        <Provider value={ {itemCartList, addItem, removeItem, clearList, itemCartCount , modifyItem} }>
+        <Provider value={ {itemCartList, addItem, removeItem, clearList, itemCartCount , modifyItem, checkOut, checkoutFinish} }>
         { children}
         </Provider>
     )
