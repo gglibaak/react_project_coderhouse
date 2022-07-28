@@ -13,7 +13,7 @@ let [checkoutFinish, setCheckoutFinish] = useState(false)
 useEffect(() => {
     // console.log(itemCartList) 
     totalCartCount();
-    checkOut();
+    // checkOut();
     // eslint-disable-next-line
   }, [itemCartList])
 
@@ -70,6 +70,11 @@ const modifyItem = (type, itemId) => {
       break;
   }
 }
+const totalPrice = () => {
+  return itemCartList.reduce((acum, i) => acum + i.quantity * i.item.price, 0);
+  
+}
+// console.log("Flag:PrecioTotal"+ totalPrice())
 
 const removeItem = (itemId) => {
     setItemCartList(itemCartList.filter(product => product.item.id !== itemId))
@@ -82,7 +87,7 @@ const clearList = () => {
 }
 
     return (
-        <Provider value={ {itemCartList, addItem, removeItem, clearList, itemCartCount , modifyItem, checkOut, checkoutFinish} }>
+        <Provider value={ {itemCartList, addItem, removeItem, clearList, itemCartCount , modifyItem, checkOut, checkoutFinish, totalPrice} }>
         { children}
         </Provider>
     )

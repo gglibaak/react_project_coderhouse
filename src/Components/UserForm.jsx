@@ -23,7 +23,7 @@ const UserForm = ( ) => {
     pb: 3,
   };
 
-  const { itemCartList, checkOut } = useContext (cartContext)
+  const { itemCartList, checkOut, totalPrice } = useContext (cartContext)
   const [OrderId, setOrderId] = useState(0)
   const [open, setOpen] = useState(true);
   const [buyer, setBuyer] = useState({
@@ -46,11 +46,10 @@ const UserForm = ( ) => {
       buyer, 
       items: newList,
       date: serverTimestamp(),
-      total: 400,
+      total: totalPrice(),
     })
     .then((result) => {
-      setOrderId(result.id)
-      console.log(newList)
+      setOrderId(result.id)      
     })
   }
 
@@ -64,8 +63,7 @@ const UserForm = ( ) => {
     };
     
   return (
-    <>
-   
+    <>   
       <Box
         sx={{
           display: open === false ? "none" : "fixed",
