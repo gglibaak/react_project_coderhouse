@@ -53,12 +53,12 @@ const CartRender = () => {
             component="div"
           >
             {itemCart.item.category === "electric-guitar"
-              ? "Guitarra Electrica" //if
-              : "acoustic-guitar"    //else
-              ? "Guitarra Acustica"  //if
-              : "bass-guitar"       //else
-              ? "Bajo Electrico"    //if
-              : itemCart.item.category}  
+              ? "Guitarra Electrica"
+              : "" || itemCart.item.category === "acoustic-guitar"
+              ? "Guitarra Acustica"
+              : "bass-guitar"
+              ? "Bajo Electrico"
+              : itemCart.item.category}
           </Typography>
           {/* instrumentItem.brand === 'Gibson USA' ? brandGibson : brandFender */}
         </Box>

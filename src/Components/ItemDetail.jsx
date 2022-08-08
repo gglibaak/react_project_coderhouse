@@ -10,6 +10,7 @@ import { useState, useContext } from 'react';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import { cartContext } from '../Context/CartContext';
+import ReplyIcon from '@mui/icons-material/Reply';
 
 const ItemDetail = ( {item} ) => {
     const [value, setValue] = useState(3); 
@@ -65,16 +66,27 @@ const ItemDetail = ( {item} ) => {
           </Box>
           {!confirmBtn ? 
             <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
-           : 
+           : <>
             <Link to="/cart" style={{ textDecoration: "none" }}>
               <Button
-                sx={{ width: { sm: "90%", md: "66%" }, margin: "0 auto" }}
+                sx={{ width: { sm: "90%", md: "66%" }, margin: "15px 0 auto auto" }}
                 variant="contained"
                 style={{ backgroundColor: "#00962d" }}
               >
-                Finalizar Compra
+                Ir al carrito de compras
               </Button>
             </Link>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <Button
+                sx={{ width: { sm: "90%", md: "66%" }, margin: "15px auto" }}
+                variant="contained"
+                style={{ backgroundColor: "#FF2C32" }}
+                startIcon={<ReplyIcon />}
+              >
+                Continuar Comprando
+              </Button>
+            </Link>
+            </>
           }
         </div>
       </div>

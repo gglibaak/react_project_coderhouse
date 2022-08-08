@@ -23,7 +23,7 @@ const UserForm = ( ) => {
     pb: 3,
   };
 
-  const { itemCartList, checkOut, totalPrice } = useContext (cartContext)
+  const { itemCartList, checkOut, totalPrice, clearList } = useContext (cartContext)
   const [OrderId, setOrderId] = useState(0)
   const [open, setOpen] = useState(true);
   const [buyer, setBuyer] = useState({
@@ -60,6 +60,12 @@ const UserForm = ( ) => {
     const handleClose = () => {
       setOpen(false);
       checkOut()
+    };
+
+    const checkOrderStatus = () => {
+      if(OrderId !== 0) {
+        clearList()
+      }
     };
     
   return (
@@ -147,7 +153,7 @@ const UserForm = ( ) => {
                 ? `Su orden se genero correctamente, su ID es ${OrderId}`
                 : ""}
             </Box>
-            <Button onClick={handleClose} sx={{ margin: '20px 20px', color: '#FF2C32' }}>Cerrar Ventana</Button>
+            <Button onClick={() => {handleClose(); checkOrderStatus(); }} sx={{ margin: '20px 20px', color: '#FF2C32' }}>Cerrar Ventana</Button>
           </Box>
         </Modal>
       </Box>

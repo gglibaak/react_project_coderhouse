@@ -14,7 +14,7 @@ const Cart = () => {
   
   return (
     <>
-    <h3>Cart</h3>
+    <h3>Carrito de Compras</h3>
     { itemCartCount === 0
      ? <Typography component="div" variant="h6">El carrito de compras se encuentra vacio.<br></br> <Link style={{ textDecoration: 'none', color: 'red', textTransform: 'uppercase'}} to="/">
        <Button  variant="contained" style={{ backgroundColor: "#FF2C32" , margin: '20px auto'}} startIcon={<SearchIcon />}>Ver Productos</Button></Link> </Typography>
