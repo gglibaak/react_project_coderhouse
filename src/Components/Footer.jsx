@@ -1,6 +1,7 @@
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Footer = () => {
     return(
@@ -19,9 +20,9 @@ const Footer = () => {
         }}
       >
         <Container maxWidth="sm">
-          <Typography>
-            EL FOOTER
-          </Typography>
+          <Link href ="https://github.com/gglibaak">
+            <GitHubIcon style={{color: 'black', fontSize: '35px'}} ></GitHubIcon>
+          </Link>
           
         </Container>
       </Box>
