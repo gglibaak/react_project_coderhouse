@@ -1,12 +1,16 @@
 #Coder Instrument Store
 
-Proyecto simulación de un e-commerce enfocado en la venta de instrumentos vintage donde el cliente podrá seleccionar y agregar a un carro de compras para posteriormente consolidar la compra.
+Proyecto simulación de un e-commerce enfocado en la venta de instrumentos vintage donde el cliente podrá seleccionar y agregar sus productos a un carro de compras para posteriormente consolidar la transacción.
 
 ![Logo](https://i.postimg.cc/KYWyRmVD/logo.png)
 
 
 ## Demo
 ![img](https://i.postimg.cc/8P8w50bv/screen-recording.gif)
+
+## Demo Live
+https://coderinstruments.netlify.app/
+
 ## Comandos para ejecutar localmente el proyecto
 
 Clonar el repo
@@ -39,3 +43,5 @@ Iniciar el servidor
 * React-Toastify
 * Firebase
 * Material UI
+
+
