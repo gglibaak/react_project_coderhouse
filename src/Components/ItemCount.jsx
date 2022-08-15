@@ -25,7 +25,7 @@ const ItemCount = ( {stock, initial, onAdd} ) => {
           case 1: //alert
             toast.warn(`Imposible disminuir menos que ${initial}`, {
               position: "top-right",
-              autoClose: 2000,
+              autoClose: 1300,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: true,
@@ -37,7 +37,7 @@ const ItemCount = ( {stock, initial, onAdd} ) => {
           case 2: //success
             toast.success(`Se ha agregado ${itemCount} a tu carrito.`, {
                 position: "top-right",
-                autoClose: 2000,
+                autoClose: 1000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -49,7 +49,7 @@ const ItemCount = ( {stock, initial, onAdd} ) => {
           case 3: //error
             toast.error(`Stock nulo, no se puede añadir mas items.`, {
                 position: "top-right",
-                autoClose: 2000,
+                autoClose: 1300,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,

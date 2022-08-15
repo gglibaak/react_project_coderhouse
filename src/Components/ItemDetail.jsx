@@ -19,8 +19,7 @@ const ItemDetail = ( {item} ) => {
     
     
     const onAdd = (itemCount) => {
-        setConfirmBtn(true)
-        // console.log(`Seleccion: ${itemCount}`)
+        setConfirmBtn(true)       
         addItem(item, itemCount);
     }
 

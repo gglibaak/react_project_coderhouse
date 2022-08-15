@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import { db } from '../firebase/firebase'
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import Modal from '@mui/material/Modal';
+import Spinner from "react-spinners/ScaleLoader";
 
 const UserForm = ( ) => {
 
@@ -25,6 +26,8 @@ const UserForm = ( ) => {
 
   const { itemCartList, checkOut, totalPrice, clearList } = useContext (cartContext)
   const [OrderId, setOrderId] = useState(0)
+  const [isValidate, setIsValidate] = useState(true);
+  const [loading, setLoading] = useState(false)
   const [open, setOpen] = useState(true);
   const [buyer, setBuyer] = useState({
       name: '',
@@ -41,6 +44,7 @@ const UserForm = ( ) => {
   })  
   
   const sendOrder = () => {
+    setLoading(true)
     const orderCollection = collection(db, 'orders');
     addDoc(orderCollection, {
       buyer, 
@@ -51,10 +55,14 @@ const UserForm = ( ) => {
     .then((result) => {
       setOrderId(result.id)      
     })
+    .finally(() => setLoading(false));
   }
+
+  const checkFormStatus = () => (!buyer.name || !buyer.phone || !buyer.email ) ? setIsValidate(false) :setIsValidate(true)  
 
   const handleChange = (prop) => (event) => {
        setBuyer({ ...buyer, [prop]: event.target.value });
+       checkFormStatus()
     };     
     
     const handleClose = () => {
@@ -94,7 +102,7 @@ const UserForm = ( ) => {
         >
           <Box sx={{ ...style, width: 550, textAlign: "center" }}>
             <h2 id="titleModalForm">Complete con sus Datos</h2>
-
+            <h5 style={{color:'red'}}>{!isValidate ? 'Por favor complete todos los campos' : ''}</h5>
             <Box
               id="descriptModalForm"
               component="form"
@@ -109,49 +117,58 @@ const UserForm = ( ) => {
               <TextField
                 id="outlined-multiliwne-flexible"
                 label="Nombre"
+                type="text" 
                 name="name"
                 value={buyer.name}
                 onChange={handleChange("name")}
                 variant="standard"
-                //   required='true'
+                required='true'
                 style={{ width: "55ch" }}
               />
 
               <TextField
                 id="outlined-multiliwne-flexible"
                 label="Teléfono"
+                type="tel" 
                 maxRows={1}
                 value={buyer.phone}
                 onChange={handleChange("phone")}
-                variant="standard"
-                helperText="..."
-                //   required='true'
+                variant="standard"                
+                required='true'
                 style={{ width: "55ch" }}
               />
 
               <TextField
                 id="outlined-multiliwne-flexible"
                 label="Correo Electronico"
+                type="text" 
                 maxRows={1}
                 value={buyer.email}
                 onChange={handleChange("email")}
                 variant="standard"
-                //   required='true'
+                required='true'
                 style={{ width: "55ch" }}
               />
 
               <Button
-                onClick={sendOrder}
+                disabled={!isValidate}
+                 onClick={sendOrder}                 
+                 onFocus={checkFormStatus}
+                 onBlur={checkFormStatus}
                 sx={{ margin: " 20px 20px" }}
                 variant="contained"
-                style={{ backgroundColor: "#FF2C32" }}
+                style={{ backgroundColor: (isValidate) ?  "#FF2C32" :  "#dddddddd" }}
               >
                 Confirmar Compra
               </Button>
-
+              <Box sx={{ width: '100%', textAlign: "center" }}>
+              { loading && <Spinner color="#FF2C32" size={8} /> }
               {OrderId !== 0
                 ? `Su orden se genero correctamente, su ID es ${OrderId}`
                 : ""}
+              </Box>
+              
+              
             </Box>
             <Button onClick={() => {handleClose(); checkOrderStatus(); }} sx={{ margin: '20px 20px', color: '#FF2C32' }}>Cerrar Ventana</Button>
           </Box>
