@@ -5,6 +5,8 @@ Proyecto simulación de un e-commerce enfocado en la venta de instrumentos vinta
 ![Logo](https://i.postimg.cc/KYWyRmVD/logo.png)
 
 
+## Demo
+![img](https://i.postimg.cc/8P8w50bv/screen-recording.gif)
 ## Comandos para ejecutar localmente el proyecto
 
 Clonar el repo
