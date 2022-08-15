@@ -12,7 +12,7 @@ Proyecto simulación de un e-commerce enfocado en la venta de instrumentos vinta
 Clonar el repo
 
 ```bash
-  git clone https://github.com/johamad5/ReactJS-EntregaFinal.git
+  git clone https://github.com/gglibaak/react_project_coderhouse
 ```
 
 Ir al directorio del proyecto
