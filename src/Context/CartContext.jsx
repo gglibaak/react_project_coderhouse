@@ -47,9 +47,11 @@ const modifyItem = (type, itemId) => {
 
   switch (type) {
     case 1: //Addition
+    if (itemCartList[itemMdfy].item.stock > (itemCartList[itemMdfy].quantity + 1)) {
       const newList = [...itemCartList];
       newList[itemMdfy].quantity += 1;
       setItemCartList(newList);
+    }
       break;
     case 2: //Subtraction
       if (itemCartList[itemMdfy].quantity > 1) {

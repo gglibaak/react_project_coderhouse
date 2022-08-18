@@ -100,14 +100,14 @@ const UserForm = ( ) => {
           aria-labelledby="titleModalForm"
           aria-describedby="descriptModalForm"
         >
-          <Box sx={{ ...style, width: 550, textAlign: "center" }}>
+          <Box sx={{ ...style, width: {xs: '250px', md: '550px'}, textAlign: "center" }}>
             <h2 id="titleModalForm">Complete con sus Datos</h2>
             <h5 style={{color:'red'}}>{!isValidate ? 'Por favor complete todos los campos' : ''}</h5>
             <Box
               id="descriptModalForm"
               component="form"
               sx={{
-                "& .MuiTextField-root": { m: 1, width: "25ch" },
+                "& .MuiTextField-root": { m: 1, width: {xs: "30ch", md: "55ch"} },
                 display: "flex",
                 flexDirection: "column",
                 margin: "0 auto",
@@ -123,19 +123,18 @@ const UserForm = ( ) => {
                 onChange={handleChange("name")}
                 variant="standard"
                 required='true'
-                style={{ width: "55ch" }}
+                
               />
 
               <TextField
                 id="outlined-multiliwne-flexible"
                 label="Teléfono"
-                type="tel" 
+                type="number" 
                 maxRows={1}
                 value={buyer.phone}
                 onChange={handleChange("phone")}
                 variant="standard"                
-                required='true'
-                style={{ width: "55ch" }}
+                required='true'               
               />
 
               <TextField
@@ -147,7 +146,6 @@ const UserForm = ( ) => {
                 onChange={handleChange("email")}
                 variant="standard"
                 required='true'
-                style={{ width: "55ch" }}
               />
 
               <Button
@@ -155,7 +153,7 @@ const UserForm = ( ) => {
                  onClick={sendOrder}                 
                  onFocus={checkFormStatus}
                  onBlur={checkFormStatus}
-                sx={{ margin: " 20px 20px" }}
+                sx={{ margin: "20px 0", width: '100%' }}
                 variant="contained"
                 style={{ backgroundColor: (isValidate) ?  "#FF2C32" :  "#dddddddd" }}
               >

@@ -30,7 +30,7 @@ const CartRender = () => {
       >
         <CardMedia
           component="img"
-          sx={{ width: 200, height: 200 }}
+          sx={{ width: 200, height: 200, display: {xs: 'none', md: 'inline'} }}
           image={itemCart.item.pictureUrl2}
           alt="Nombre del instrumento"
         />
@@ -44,13 +44,14 @@ const CartRender = () => {
             height: 200,
           }}
         >
-          <Typography component="div" variant="h5">
+          <Typography component="div" variant="h5" sx={{ fontSize: {xs: '15px', md: '25px'}}}>
             {itemCart.item.title}
           </Typography>
           <Typography
             variant="subtitle1"
             color="text.secondary"
             component="div"
+            sx={{fontSize: {xs: '13px', md: '15px'}}}
           >
             {itemCart.item.category === "electric-guitar"
               ? "Guitarra Electrica"
@@ -60,7 +61,7 @@ const CartRender = () => {
               ? "Bajo Electrico"
               : itemCart.item.category}
           </Typography>
-          {/* instrumentItem.brand === 'Gibson USA' ? brandGibson : brandFender */}
+          
         </Box>
         <Box
           sx={{
@@ -85,7 +86,7 @@ const CartRender = () => {
               {""}
               <RemoveIcon style={{ color: "#FF2C32", fontSize: "15px" }} />
             </Button>
-            <Box style={{ margin: "0 30px" }}>{itemCart.quantity}</Box>
+            <Box sx={{ margin: {xs:"0", md: "0 30px"} }}>{itemCart.quantity}</Box>
             <Button
               style={{}}
               variant="text"
@@ -108,7 +109,7 @@ const CartRender = () => {
             height: 200,
           }}
         >
-          <Typography component="div" variant="h5">
+          <Typography component="div" variant="h5" sx={{fontSize: {xs: '15px', md: '25px'}}}>
             {`$${itemCart.item.price * itemCart.quantity}`}
           </Typography>
         </Box>
